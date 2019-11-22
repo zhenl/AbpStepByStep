@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29509.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ZL.Poem.ConsoleClient", "ZL.Poem.ConsoleClient\ZL.Poem.ConsoleClient.csproj", "{60260E96-9048-49B1-B07F-317B46B087B7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZL.Poem.Core", "ZL.Poem.Core\ZL.Poem.Core.csproj", "{F7ACED5A-3273-48BB-8B0F-6201D6888907}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZL.Poem.EF", "ZL.Poem.EF\ZL.Poem.EF.csproj", "{AC87FABB-CA55-4602-8F7F-F6D18D59E935}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZL.Poem.Application", "ZL.Poem.Application\ZL.Poem.Application.csproj", "{DB2C8FF9-BA39-4232-A51D-3DF10649BDBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZL.PoemApplication.Test", "ZL.PoemApplication.Test\ZL.PoemApplication.Test.csproj", "{FE2595F5-0759-4367-8353-59822CD09F1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZL.Poem.WebApi", "ZL.Poem.WebApi\ZL.Poem.WebApi.csproj", "{FF4BD644-9476-4F90-809D-AA8C01786330}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60260E96-9048-49B1-B07F-317B46B087B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60260E96-9048-49B1-B07F-317B46B087B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60260E96-9048-49B1-B07F-317B46B087B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60260E96-9048-49B1-B07F-317B46B087B7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7ACED5A-3273-48BB-8B0F-6201D6888907}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7ACED5A-3273-48BB-8B0F-6201D6888907}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7ACED5A-3273-48BB-8B0F-6201D6888907}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7ACED5A-3273-48BB-8B0F-6201D6888907}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC87FABB-CA55-4602-8F7F-F6D18D59E935}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC87FABB-CA55-4602-8F7F-F6D18D59E935}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC87FABB-CA55-4602-8F7F-F6D18D59E935}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC87FABB-CA55-4602-8F7F-F6D18D59E935}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB2C8FF9-BA39-4232-A51D-3DF10649BDBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DB2C8FF9-BA39-4232-A51D-3DF10649BDBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB2C8FF9-BA39-4232-A51D-3DF10649BDBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB2C8FF9-BA39-4232-A51D-3DF10649BDBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE2595F5-0759-4367-8353-59822CD09F1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE2595F5-0759-4367-8353-59822CD09F1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE2595F5-0759-4367-8353-59822CD09F1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE2595F5-0759-4367-8353-59822CD09F1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF4BD644-9476-4F90-809D-AA8C01786330}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF4BD644-9476-4F90-809D-AA8C01786330}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF4BD644-9476-4F90-809D-AA8C01786330}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF4BD644-9476-4F90-809D-AA8C01786330}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {93E907C7-04D2-453E-B3EC-C631D688AE20}
+	EndGlobalSection
+EndGlobal
