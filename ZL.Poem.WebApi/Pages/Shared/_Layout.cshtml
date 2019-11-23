@@ -1,0 +1,22 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewData["Title"]</title>
+
+    <environment names="Development,Production">
+         <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" asp-append-version="true" />
+    </environment>
+</head>
+<body>
+
+
+    <environment names="Development,Production">
+        <script src="~/lib/jquery3.3.1/dist/jquery.min.js" asp-append-version="true"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js" asp-append-version="true"></script>
+    </environment>
+    @RenderBody()
+</body>
+</html>

@@ -1,0 +1,66 @@
+﻿@page
+@model ZL.Poem.WebApi.Pages.SearchPoetModel
+@{
+    ViewData["Title"] = "诗人查询";
+}
+
+<h1>诗人查询</h1>
+
+<form asp-page="./SearchPoet" method="get">
+    <div class="form-actions no-color">
+        <p>
+            <input type="text" name="SearchString" class="form-control ds-input" placeholder="诗人姓名" value="@Model.CurrentFilter" />
+            <input type="submit" value="查询" class="btn btn-default" /> |
+            <a asp-page="./SearchPoet"  class="btn btn-default" >显示全部</a>
+        </p>
+    </div>
+</form>
+
+<table class="table1">
+    <thead>
+        <tr>
+            <th>
+                姓名
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.poetResults.Items)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+@{
+    var HasPreviousPage = Model.CurrentPage > 0;
+    var HasNextPage = Model.CurrentPage * Model.PageSize < Model.poetResults.TotalCount;
+
+    var prevDisabled = !HasPreviousPage ? "disabled" : "";
+    var nextDisabled = !HasNextPage ? "disabled" : "";
+}
+
+@if (HasPreviousPage)
+{
+    <a asp-page="./SearchPoet"
+       asp-route-pageIndex="@(Model.CurrentPage - 1)"
+       asp-route-SearchString="@Model.CurrentFilter"
+       class="btn btn-default @prevDisabled">
+        前一页
+    </a>
+}
+@if (HasNextPage)
+{
+    <a asp-page="./SearchPoet"
+       asp-route-pageIndex="@(Model.CurrentPage + 1)"
+       asp-route-SearchString="@Model.CurrentFilter"
+       class="btn btn-default @nextDisabled">
+        后一页
+    </a>
+}
