@@ -1,6 +1,7 @@
 ﻿using Abp.AspNetCore;
 using Abp.AspNetCore.Configuration;
 using Abp.Modules;
+using Abp.Reflection.Extensions;
 using System.Reflection;
 using ZL.Poem.Application;
 using ZL.Poem.EF;
@@ -16,15 +17,13 @@ namespace ZL.Poem.WebApi
         public override void PreInitialize()
         {
             Configuration.DefaultNameOrConnectionString = "Server=localhost; Database=PoemNew; Trusted_Connection=True;";
+            //创建动态Web Api
+            Configuration.Modules.AbpAspNetCore().CreateControllersForAppServices(typeof(PoemApplicationModule).Assembly, moduleName: "app", useConventionalHttpVerbs: false);
         }
 
         public override void Initialize()
         {
-            IocManager.RegisterAssemblyByConvention(Assembly.GetExecutingAssembly());
-
-            //创建动态Web Api
-            Configuration.Modules.AbpAspNetCore().CreateControllersForAppServices(typeof(PoemApplicationModule).Assembly, moduleName: "app", useConventionalHttpVerbs: false);
-
+            IocManager.RegisterAssemblyByConvention(typeof(PoemWebApiModule).GetAssembly());
         }
     }
 }
