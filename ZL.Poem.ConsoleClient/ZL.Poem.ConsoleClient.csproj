@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Abp" Version="5.1.0" />
+    <PackageReference Include="Abp" Version="5.3.0" />
   </ItemGroup>
 
   <ItemGroup>
