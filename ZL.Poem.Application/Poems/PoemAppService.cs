@@ -68,19 +68,21 @@ namespace ZL.Poem.Application.Poems
         
         public List<CategoryDto> GetAllCategories()
         {
-            return _categoryRepository.GetAll().ToList().MapTo<List<CategoryDto>>();
+            return ObjectMapper.Map<List<CategoryDto>>(_categoryRepository.GetAll().ToList());
+            //return _categoryRepository.GetAll().ToList().MapTo<List<CategoryDto>>();
         }
 
         public List<CategoryPoemDto> GetCategoryPoems()
         {
-            return _categoryPoemRepository.GetAll().ToList().MapTo<List<CategoryPoemDto>>();
+            return ObjectMapper.Map<List<CategoryPoemDto>>(_categoryPoemRepository.GetAll().ToList());
+            //return _categoryPoemRepository.GetAll().ToList().MapTo<List<CategoryPoemDto>>();
         }
 
         public List<PoemDto> GetPoemsOfCategory(int categoryid)
         {
             var lst = _categoryPoemRepository.GetAllIncluding(o => o.Poem).Where(p => p.CategoryId == categoryid).Select(q => q.Poem);
-
-            return lst.MapTo<List<PoemDto>>();
+            return ObjectMapper.Map<List<PoemDto>>(lst);
+            //return lst.MapTo<List<PoemDto>>();
         }
 
         public PagedResultDto<PoemDto> GetPagedPoems(PagedResultRequestDto dto)
@@ -91,7 +93,7 @@ namespace ZL.Poem.Application.Poems
             return new PagedResultDto<PoemDto>
             {
                 TotalCount = count,
-                Items = lst.MapTo<List<PoemDto>>()
+                Items = ObjectMapper.Map<List<PoemDto>>(lst) //lst.MapTo<List<PoemDto>>()
             };
         }
 
@@ -103,7 +105,7 @@ namespace ZL.Poem.Application.Poems
             return new PagedResultDto<PoetDto>
             {
                 TotalCount = count,
-                Items = lst.MapTo<List<PoetDto>>()
+                Items = ObjectMapper.Map<List<PoetDto>>(lst) //lst.MapTo<List<PoetDto>>()
             };
         }
 
@@ -111,7 +113,7 @@ namespace ZL.Poem.Application.Poems
         {
             var lst = _categoryPoemRepository.GetAllIncluding(o => o.Category).Where(p => p.PoemId == poemid).Select(q => q.Category);
 
-            return lst.MapTo<List<CategoryDto>>();
+            return ObjectMapper.Map<List<CategoryDto>>(lst); //lst.MapTo<List<CategoryDto>>();
         }
 
         public void RemovePoemFromCategory(CategoryPoemDto categoryPoem)
@@ -149,7 +151,7 @@ namespace ZL.Poem.Application.Poems
             return new PagedResultDto<PoemDto>
             {
                 TotalCount = count,
-                Items = lst.MapTo<List<PoemDto>>()
+                Items = ObjectMapper.Map<List<PoemDto>>(lst)//lst.MapTo<List<PoemDto>>()
             };
         }
 
@@ -166,7 +168,7 @@ namespace ZL.Poem.Application.Poems
             return new PagedResultDto<PoetDto>
             {
                 TotalCount = count,
-                Items = lst.MapTo<List<PoetDto>>()
+                Items = ObjectMapper.Map<List<PoetDto>>(lst) // lst.MapTo<List<PoetDto>>()
             };
         }
     }
